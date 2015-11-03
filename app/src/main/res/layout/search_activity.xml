@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_login"></include>
+
+
+    <LinearLayout
+        android:id="@+id/llSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llHeader"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edSearchName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/search_icon"
+            android:drawablePadding="5dp"
+            android:hint="@string/search_by_name_or_cat"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:textSize="13dp" />
+
+        <include
+            android:id="@+id/include12"
+            layout="@layout/line_15dp_both"></include>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSearchCity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llSearch"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edSearchCity"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/city"
+            android:drawablePadding="5dp"
+            android:hint="@string/search_by_city"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:textSize="13dp" />
+
+        <include
+            android:id="@+id/include12"
+            layout="@layout/line_15dp_both"></include>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llSearchLocation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llSearchCity"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edSearchLocation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/location_search"
+            android:drawablePadding="5dp"
+            android:hint="@string/search_by_loc"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:textSize="13dp" />
+
+        <include
+            android:id="@+id/include12"
+            layout="@layout/line_15dp_both"></include>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <ListView
+            android:id="@+id/grid"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

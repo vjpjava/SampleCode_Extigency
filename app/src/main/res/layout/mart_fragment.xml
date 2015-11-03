@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_tabs">
+
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSearchMart"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/container_toolbar"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edSearchName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/search_icon"
+            android:drawablePadding="5dp"
+            android:hint="Search by Category or Brand"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textSize="13dp" />
+
+
+    </LinearLayout>
+
+
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:layout_below="@+id/llSearchMart"
+        android:background="@color/white" />
+
+
+    <FrameLayout
+        android:id="@+id/rlpagerBanner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tabs">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pagerBanner"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/background_tabs" />
+
+        <LinearLayout
+            android:id="@+id/llSearchMarti"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <com.viewpagerindicator.CirclePageIndicator
+                android:id="@+id/indicator"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#8555"
+                android:padding="5dp"
+                app:fillColor="@color/blueBG"
+                app:pageColor="@color/Detailsdivider"
+                app:radius="4dp"
+                app:strokeWidth="1dp" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+    <com.android.droozo.util.NoSlideViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/rlpagerBanner"
+        android:layout_margin="5dp"
+        android:background="@drawable/background_tabs"
+        tools:context=".MainActivity" />
+
+
+</RelativeLayout>

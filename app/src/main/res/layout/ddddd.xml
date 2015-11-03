@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal">
+
+    <com.android.droozo.util.SelectedLinearLayout
+        android:id="@+id/root"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="@color/dividerLine"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_category"
+            android:layout_width="110dp"
+            android:layout_height="80dp"
+            android:background="@drawable/filter_tab_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/filter_img_category" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/txtGreyColor"></View>
+
+        <LinearLayout
+            android:id="@+id/ll_manufacturer"
+            android:layout_width="110dp"
+            android:layout_height="80dp"
+            android:background="@drawable/filter_tab_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/filter_img_manu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/txtGreyColor"></View>
+
+        <LinearLayout
+            android:id="@+id/ll_weight"
+            android:layout_width="110dp"
+            android:layout_height="80dp"
+            android:background="@drawable/filter_tab_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/filter_img_weight" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/txtGreyColor"></View>
+
+        <LinearLayout
+            android:id="@+id/ll_Price"
+            android:layout_width="110dp"
+            android:layout_height="80dp"
+            android:background="@drawable/filter_tab_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/filter_img_price" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/txtGreyColor"></View>
+
+    </com.android.droozo.util.SelectedLinearLayout>
+
+
+</LinearLayout>

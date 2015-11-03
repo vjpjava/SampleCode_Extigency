@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_login" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider0"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/headerLayout"
+        android:background="@color/dividerLine" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/divider0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llFBGoogle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider0"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:id="@+id/llFB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.48"
+                    android:background="@drawable/selector_btn_for_fb"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtfb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/facebook"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/facebook"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.04"
+                    android:background="@android:color/transparent" />
+
+                <LinearLayout
+                    android:id="@+id/llGooglePlus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.48"
+                    android:background="@drawable/selector_btn_for_google"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtGooglePlus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/googleplus"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/google_plus"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/dividerLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llFBGoogle"
+                android:padding="15dp"
+                android:src="@drawable/line_or"
+                android:visibility="visible" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/dividerLine"
+                android:background="@color/dividerLine" />
+
+            <LinearLayout
+                android:id="@+id/llEditText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider1"
+                android:layout_centerHorizontal="true"
+                android:background="@color/navigatiobBarBG"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="Name"
+                        android:imeOptions="actionNext"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dividere1a"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/dividerLine" />
+
+                <LinearLayout
+                    android:id="@+id/llCategory"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edCategory"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="Category"
+                        android:imeOptions="actionNext"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dividerCategory"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/dividerLine" />
+
+                <LinearLayout
+                    android:id="@+id/llEmail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edEmail"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="Email Address"
+                        android:imeOptions="actionNext"
+                        android:inputType="text|textWebEmailAddress"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dividere1b"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/dividerLine" />
+
+                <LinearLayout
+                    android:id="@+id/llPhone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edPhone"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="Phone Number"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dividere1c"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/dividerLine" />
+
+                <LinearLayout
+                    android:id="@+id/llPassword"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edPassword"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="Password"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dividere1d"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/dividerLine" />
+
+                <LinearLayout
+                    android:id="@+id/llConPassword"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edConPassword"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="Confirm Password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:textSize="13dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/llEditText"
+                android:background="@color/dividerLine" />
+
+            <!-- <com.android.droozo.util.CircleI -->
+            <!-- android:id="@+id/takeImg" -->
+            <!-- android:layout_width="80dp" -->
+            <!-- android:layout_height="80dp" -->
+            <!-- android:layout_below="@+id/divider2" -->
+            <!-- android:layout_gravity="center" -->
+            <!-- android:background="@drawable/splash_bg" -->
+            <!-- android:paddingLeft="15dp" -->
+            <!-- android:paddingRight="15dp" -->
+            <!-- android:paddingTop="10dp" -->
+            <!-- android:scaleType="centerCrop" /> -->
+
+            <LinearLayout
+                android:id="@+id/lltakeImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.android.droozo.util.CircleImageView
+                    android:id="@+id/takeImg"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerInParent="true"
+                    android:paddingTop="20dp"
+                    android:src="@drawable/attach_photo"
+                    app:border_color="@color/light_color"
+                    app:border_width="2dp" />
+
+                <TextView
+                    style="@style/grey_normal_14dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="17dp"
+                    android:paddingTop="3dp"
+                    android:text="@string/attach_photo_to_upload" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/lltakeImg"
+                android:background="@color/dividerLine" />
+
+            <RelativeLayout
+                android:id="@+id/llterms"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:paddingRight="10dp"
+                    android:text="Terms &amp; Conditions" />
+
+                <ToggleButton
+                    android:id="@+id/togglebtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:checked="true"
+                    android:textOn="YES"
+                    android:textOff="NO"
+                    android:textColorHighlight="@color/green_bg" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/llterms"
+                android:background="@color/dividerLine" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

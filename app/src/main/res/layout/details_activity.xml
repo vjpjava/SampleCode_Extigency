@@ -1,0 +1,515 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"></include>
+
+    <LinearLayout
+        android:id="@+id/nav_header_container"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_below="@+id/toolbar"
+        android:background="@drawable/banner_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/imgUserDrawer"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/user" />
+
+        <TextView
+            android:id="@+id/txtNameDetails"
+            style="@style/white_text_bold_16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Dr.V.K. Gupta" />
+
+        <TextView
+            android:id="@+id/txtQual"
+            style="@style/white_normal_14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:text="MBBS" />
+
+    </LinearLayout>
+
+    <ScrollView
+
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nav_header_container">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/drawerList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/txtQualification"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:drawableLeft="@drawable/doctor_detail"
+                        android:drawablePadding="10dp"
+                        android:padding="15dp"
+                        android:text="MBBS" />
+                </RelativeLayout>
+
+
+                <include layout="@layout/line_complete"></include>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtRate"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:drawableLeft="@drawable/rupes_detail"
+                        android:drawablePadding="10dp"
+                        android:padding="15dp"
+                        android:text="$10000" />
+                </RelativeLayout>
+
+                <include layout="@layout/line_complete"></include>
+
+                <RelativeLayout
+                    android:id="@+id/llMap"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtAddressDetails"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:drawableLeft="@drawable/location_detail"
+                        android:drawablePadding="10dp"
+                        android:ems="20"
+                        android:padding="15dp"
+                        android:text="256/89, XYZ Coloney, Chicago, USA, 256/89, XYZ Coloney, Chicago, USA" />
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/arrow" />
+
+                </RelativeLayout>
+
+                <include layout="@layout/line_complete"></include>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtTime"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:drawableLeft="@drawable/time_detail"
+                        android:drawablePadding="10dp"
+                        android:padding="15dp"
+                        android:text="10.00 AM, MON-FRI" />
+                </RelativeLayout>
+
+                <include layout="@layout/line_complete"></include>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtRecommend"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:drawableLeft="@drawable/recommended_detail"
+                        android:drawablePadding="10dp"
+                        android:padding="15dp"
+                        android:text="10000 Recommended" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <include
+                android:id="@+id/include1"
+                layout="@layout/line_complete"></include>
+
+
+            <TextView
+                style="@style/grey_popup_normal_15dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/Detailsdivider"
+                android:padding="15dp"
+                android:text="Book an Appointment" />
+
+            <include
+                android:id="@+id/include2"
+                layout="@layout/line_complete"></include>
+
+
+            <LinearLayout
+                android:id="@+id/llAppointment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/radioOption"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/radioOption1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:clickable="false"
+                                android:text="Option 1" />
+
+                            <ImageView
+                                android:id="@+id/imgResetDateTimeFirst"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:src="@drawable/reset" />
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="30dp"
+                                android:text="Date and Time"
+                                android:textColor="@color/green_bg"
+                                android:textSize="11dp" />
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:onClick="showDatePickerDialog"
+                                android:orientation="vertical"
+                                android:paddingLeft="30dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="2dp">
+
+                                <TextView
+                                    android:id="@+id/txtFirstDateTime"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableRight="@drawable/dropdown"
+                                    android:paddingBottom="5dp"
+                                    android:paddingTop="5dp"
+                                    android:text="Please select date and time..."
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp" />
+
+                                <include layout="@layout/line_complete"></include>
+
+                                <View
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="10dp"></View>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/radioOption2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:clickable="false"
+                                android:text="Option 2" />
+
+                            <ImageView
+                                android:id="@+id/imgResetDateTimeSecond"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:src="@drawable/reset" />
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="30dp"
+                                android:text="Date and Time"
+                                android:textColor="@color/green_bg"
+                                android:textSize="11dp" />
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:onClick="showDatePickerDialogSecond"
+                                android:orientation="vertical"
+                                android:paddingLeft="30dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="2dp">
+
+
+                                <TextView
+                                    android:id="@+id/txtSecondDateTime"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableRight="@drawable/dropdown"
+                                    android:paddingBottom="5dp"
+                                    android:paddingTop="5dp"
+                                    android:text="Please select date and time..."
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp" />
+
+                                <include layout="@layout/line_complete"></include>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+                <RadioButton
+                    android:id="@+id/radioBookFor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:checked="true"
+                    android:clickable="false"
+                    android:text="Book For"
+                    android:textColor="@color/txtGreyColor"
+                    android:textSize="14dp" />
+
+
+                <!-- <TextView
+                     android:layout_width="fill_parent"
+                     android:layout_height="wrap_content"
+                     android:drawableLeft="@drawable/recommended_detail"
+                     android:drawablePadding="5dp"
+                     android:padding="15dp"
+                     android:text="Book For"
+                     android:textColor="@color/txtGreyColor"
+                     android:textSize="14dp" />-->
+
+
+                <LinearLayout
+                    android:id="@+id/llSelfOther"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="35dp"
+                    android:paddingRight="15dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:id="@+id/llSelf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.48"
+                        android:background="@drawable/selector_btn_for_blue"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtSelf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="5dp"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="SELF"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.04"
+                        android:background="@android:color/transparent" />
+
+                    <LinearLayout
+                        android:id="@+id/llOthers"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.48"
+                        android:background="@drawable/selector_btn_for_grey_grey"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtOthers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="5dp"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:text="OTHER"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <include layout="@layout/line_complete"></include>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtrecommend"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:ems="15"
+                        android:padding="15dp"
+                        android:text="Would you like to recommend this specialist" />
+
+                    <ToggleButton
+                        android:id="@+id/togglebtnRecommend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:checked="false"
+                        android:textColorHighlight="@color/green_bg"
+                        android:textOff="NO"
+                        android:textOn="YES" />
+
+                </RelativeLayout>
+
+                <include layout="@layout/line_complete"></include>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtterms"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:padding="15dp"
+                        android:text="I agree to the \''Terms of use\''" />
+
+                    <ToggleButton
+                        android:id="@+id/togglebtnTerms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:checked="false"
+                        android:textColorHighlight="@color/green_bg"
+                        android:textOff="NO"
+                        android:textOn="YES" />
+                </RelativeLayout>
+
+                <include layout="@layout/line_complete"></include>
+
+                <LinearLayout
+                    android:id="@+id/llbtnAppointment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/selector_btn_for_blue"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtBookAppointment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/book_appointment"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
