@@ -88,10 +88,39 @@
                         android:paddingBottom="10dp"
                         android:paddingLeft="15dp"
                         android:paddingTop="10dp"
-                        android:text="Name" />
+                        android:text="First Name" />
 
                     <TextView
-                        android:id="@+id/txtName"
+                        android:id="@+id/txtFirstName"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="10dp"
+                        android:text="-" />
+                </RelativeLayout>
+
+                <include layout="@layout/line_15dp_left"></include>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/black_popup_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="10dp"
+                        android:text="Last Name" />
+
+                    <TextView
+                        android:id="@+id/txtLastName"
                         style="@style/grey_normal_14dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

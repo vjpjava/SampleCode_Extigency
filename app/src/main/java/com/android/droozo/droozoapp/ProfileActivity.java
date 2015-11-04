@@ -67,7 +67,7 @@ public class ProfileActivity extends AppCompatActivity {
     private final int RESULT_CAMERA = 100;
     private final int RESULT_GALLERY = 200;
     private CircleImageView imgUserDrawer;
-    private TextView txtName, txtEmailDrawer, txtPhone;
+    private TextView txtFirstName, txtLastName, txtEmailDrawer, txtPhone;
     private ImageOperationUtil imageUtil = null;
     private String mFilePath = null;
     private Bitmap mUserBitmap;
@@ -82,6 +82,12 @@ public class ProfileActivity extends AppCompatActivity {
 
     }// end onCreate()-----------------
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getProfileDetailsService();
+    }
 
     /**
      * maintain Toolbar ui
@@ -122,7 +128,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         // initailze UI
         imgUserDrawer = (CircleImageView) findViewById(R.id.imgUserDrawer);
-        txtName = (TextView) findViewById(R.id.txtName);
+        txtFirstName = (TextView) findViewById(R.id.txtFirstName);
+        txtLastName = (TextView) findViewById(R.id.txtLastName);
         txtEmailDrawer = (TextView) findViewById(R.id.txtEmailDrawer);
         txtPhone = (TextView) findViewById(R.id.txtPhone);
         imageUtil = new ImageOperationUtil(mActivity);
@@ -134,7 +141,6 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        getProfileDetailsService();
 
     }// end setBodyUI()----------------
 
@@ -392,7 +398,8 @@ public class ProfileActivity extends AppCompatActivity {
     private void setProfileInfo(ResponseData data) {
 
         Picasso.with(mActivity).load(data.getPersonal_detail().getProfile_image()).memoryPolicy(MemoryPolicy.NO_CACHE).networkPolicy(NetworkPolicy.NO_CACHE).transform(new CircleTransform()).into(imgUserDrawer);
-        txtName.setText("" + data.getPersonal_detail().getFname());
+        txtFirstName.setText("" + data.getPersonal_detail().getFname());
+        txtLastName.setText("" + data.getPersonal_detail().getLname());
         txtEmailDrawer.setText("" + data.getPersonal_detail().getEmail());
         txtPhone.setText("" + data.getPersonal_detail().getPhone());
 

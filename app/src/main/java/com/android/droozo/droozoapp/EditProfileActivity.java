@@ -1,35 +1,27 @@
 package com.android.droozo.droozoapp;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Dialog;
-import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.droozo.interfaces.UpdateTitleFragment;
-import com.android.droozo.util.CircleImageView;
-import com.android.droozo.util.ImageOperationUtil;
+import com.android.droozo.Api.ApiCaller;
+import com.android.droozo.Model.HealthProviderModel;
+import com.android.droozo.Model.ResponseData;
+import com.android.droozo.util.CommonMethods;
 import com.android.droozo.util.Utility;
+import com.rey.material.widget.EditText;
 
-import java.io.File;
+import java.util.HashMap;
+
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 /**
  * Edit user profile
@@ -40,11 +32,14 @@ public class EditProfileActivity extends AppCompatActivity {
     private Toolbar mToolBar;
     private Activity mActivty = this;
     private EditText edFirstName, edLastName, edEmailId, edContactNo;
+    private EditText edNewPassword, edConfirmPassword;
+    private int userid;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_profile_fragment);
+        userid = Utility.getPreferencesInteger(mActivty, "USERID");
         toolBarManage();
         setBodyUI();
 
@@ -68,8 +63,6 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkValidation();
-                //Toast.makeText(EditProfileActivity.this, "Profile successfully updated!", Toast.LENGTH_SHORT).show();
-                onBackPressed();
             }
         });
 
@@ -90,6 +83,8 @@ public class EditProfileActivity extends AppCompatActivity {
         edLastName = (EditText) findViewById(R.id.edLastName);
         edEmailId = (EditText) findViewById(R.id.edEmailId);
         edContactNo = (EditText) findViewById(R.id.edContactNO);
+        edConfirmPassword = (EditText) findViewById(R.id.edConfirmPassword);
+        edNewPassword = (EditText) findViewById(R.id.edNewPassword);
 
     }// end setBodyUI()---------------------
 
@@ -109,11 +104,68 @@ public class EditProfileActivity extends AppCompatActivity {
             edEmailId.setError("Please enter valid sEmail Id!");
         } else if (edContactNo.getText().toString().equalsIgnoreCase("")) {
             edContactNo.setError("Please enter Contact No!");
+        } else if (edNewPassword.getText().toString().trim().length() <= 0) {
+            edNewPassword.setError("Password field shouldn't be blank");
+        } else if (edNewPassword.getText().toString().trim().length() <= 5 || edNewPassword.getText().toString().trim().length() >= 16) {
+            edNewPassword.setError("Password should be between 6 to 15 characters");
+        } else if (edConfirmPassword.getText().toString().trim().length() <= 0) {
+            edConfirmPassword.setError("Password field shouldn't be blank");
+        } else if (edConfirmPassword.getText().toString().trim().length() <= 5 || edConfirmPassword.getText().toString().trim().length() >= 16) {
+            edConfirmPassword.setError("Password should be between 6 to 15 characters");
+        } else if (!edConfirmPassword.getText().toString().trim().equals(edNewPassword.getText().toString().trim())) {
+            Utility.showMessage("New Password and Confirm New Password should be same", mActivty);
         } else {
             updateProfileInfo();
         }
 
     }// end checkValidation()-----------------
+
+
+    /**
+     * send profile new info on server
+     */
+    private void updateProfileInfo() {
+        HashMap<String, String> request = new HashMap<String, String>();
+        request.put("email", "");
+        request.put("service_uuidgen", CommonMethods.Signature);
+        request.put("id", String.valueOf(userid));
+        request.put("firstname", edFirstName.getText().toString().trim());
+        request.put("lastname", edLastName.getText().toString().trim());
+        request.put("phone", edContactNo.getText().toString().trim());
+        request.put("ppassword", edNewPassword.getText().toString().trim());
+        RestAdapter restAdapter = new RestAdapter.Builder()
+                .setEndpoint(CommonMethods.API).setLog(new RestAdapter.Log() {
+
+                    @Override
+                    public void log(String msg) {
+                        Log.i("Response is--log---", msg);
+
+                    }
+                }).setLogLevel(RestAdapter.LogLevel.FULL).build();
+
+        ApiCaller git = restAdapter.create(ApiCaller.class);
+
+
+        git.updateProfile(request, new Callback<HealthProviderModel>() {
+            @Override
+            public void failure(RetrofitError arg0) {
+                Utility.showMessage("failure " + arg0.toString(), mActivty);
+            }
+
+            @Override
+            public void success(HealthProviderModel result, Response arg2) {
+                ResponseData data;
+                data = result.getResponseData();
+                // check status code if 500 then show message otherwise continue
+                if (result.getStatusCode() == 500) {
+                    Utility.showMessage("" + data.getMessage(), mActivty);
+                } else {
+                    Utility.showMessage("" + data.getMessage(), mActivty);
+                    onBackPressed();
+                }
+            }
+        });
+    }// end forgotPasswordService()---------------
 
 
     @Override

@@ -110,6 +110,8 @@
 
                 </RelativeLayout>
 
+                <include layout="@layout/line_15dp_left"></include>
+
                 <RelativeLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content">
@@ -122,6 +124,48 @@
                         android:layout_alignParentLeft="true"
                         android:hint="Contact No"
                         android:inputType="number"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+
+
+                </RelativeLayout>
+
+                <include layout="@layout/line_15dp_left"></include>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.rey.material.widget.EditText
+                        android:id="@+id/edNewPassword"
+                        style="@style/Material.Widget.EditText.Light"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:hint="New Password"
+                        android:inputType="textPassword"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+
+
+                </RelativeLayout>
+
+                <include layout="@layout/line_15dp_left"></include>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.rey.material.widget.EditText
+                        android:id="@+id/edConfirmPassword"
+                        style="@style/Material.Widget.EditText.Light"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:hint="Confirm New Password"
+                        android:inputType="textPassword"
                         android:paddingBottom="10dp"
                         android:paddingLeft="15dp"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
