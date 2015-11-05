@@ -124,7 +124,6 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
     private void setBodyUI() {
         _activity = this;
 
-
         mllFb = (LinearLayout) findViewById(R.id.llFB);
         mllFb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -225,20 +224,13 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         switch (v.getId()) {
             case R.id.txtRight:
                 checkLoginFields();
-
-                // callWelcomePage();
                 break;
-
             case R.id.llGooglePlus:
                 showToast("Google Plus");
                 break;
             case R.id.txtForgetPassword:
                 popupForgotPassword();
                 break;
-            // case R.id.llNewSignUp:
-            // popupSignupSelection();
-            // break;
-
             default:
                 break;
         }

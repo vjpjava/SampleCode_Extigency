@@ -254,9 +254,7 @@ public class SignUpActivity extends AppCompatActivity implements
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.txtRight:
-                RegisterProcess();
-
-                //Utility.getUtilityInstance().doStartActivityWithFinish(_activity, WelcomeActivity.class, "right");
+                checkValidation();
                 break;
             case R.id.takeImg:
                 popupSelectionForImage();
@@ -267,6 +265,35 @@ public class SignUpActivity extends AppCompatActivity implements
         }
 
     }// end onClick()-----------------
+
+
+    private void checkValidation() {
+
+        if (Utility.getStringFromEditText(_edName).length() <= 0) {
+            _edName.setError("Please enter a Name!");
+        } else if (Utility.getStringFromEditText(_edEmail).length() <= 0) {
+            _edEmail.setError("Please enter a valid email address!");
+        } else if (!Utility.isValidEmail(Utility.getStringFromEditText(_edEmail))) {
+            _edEmail.setError("Please enter a valid email address!");
+        } else if (Utility.getStringFromEditText(_edPhone).length() <= 0) {
+            _edPhone.setError("Please enter a valid phone number!");
+        } else if (Utility.getStringFromEditText(_edPassword).length() <= 0) {
+            _edPassword.setError("Please enter your password!");
+        } else if (Utility.getStringFromEditText(_edPassword).length() <= 5) {
+            _edPassword.setError("Password length must be between 6 to 15!");
+        } else if (Utility.getStringFromEditText(_edConfirmPassword).length() <= 0) {
+            _edConfirmPassword.setError("Please enter your confirm password!");
+        } else if (Utility.getStringFromEditText(_edConfirmPassword).length() <= 5) {
+            _edConfirmPassword.setError("Password length must be between 6 to 15!");
+        } else if (!Utility.getStringFromEditText(_edConfirmPassword).equals(Utility.getStringFromEditText(_edPassword))) {
+            _edConfirmPassword.setError("Password and confirm password must be match. Please check it");
+        } else {
+            RegisterProcess();
+        }
+
+
+    }// end checkValidation()------------
+
 
     /**
      * send manual user register request
@@ -313,7 +340,6 @@ public class SignUpActivity extends AppCompatActivity implements
                         renameFile(userid);
                     }
                 }
-
         );
     }// end RegisterProcess()--------------
 

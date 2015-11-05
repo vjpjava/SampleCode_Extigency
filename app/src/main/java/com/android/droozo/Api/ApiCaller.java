@@ -79,9 +79,15 @@ public interface ApiCaller {
     @POST("/userProfile")
     public void getProfileDetails(@FieldMap HashMap<String, String> arr,
                                   retrofit.Callback<HealthProviderModel> callback);
+
     @FormUrlEncoded
     @POST("/updateProfile")
     public void updateProfile(@FieldMap HashMap<String, String> arr,
-                                  retrofit.Callback<HealthProviderModel> callback);
+                              retrofit.Callback<HealthProviderModel> callback);
+
+    @FormUrlEncoded
+    @POST("/contactus")
+    public void sendContactUS(@FieldMap HashMap<String, String> arr,
+                              retrofit.Callback<HealthProviderModel> callback);
 
 }

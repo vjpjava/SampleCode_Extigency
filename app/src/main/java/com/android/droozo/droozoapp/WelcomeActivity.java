@@ -13,6 +13,7 @@ import com.android.droozo.fragment_slider.ReferAFriendFragment;
 import com.android.droozo.fragment_slider.SettingsFragment;
 import com.android.droozo.fragment_slider.WelcomeFragment;
 import com.android.droozo.interfaces.MoveFragment;
+import com.android.droozo.interfaces.MoveFragmentWithOutAddbackStack;
 import com.android.droozo.util.Utility;
 
 import android.app.Activity;
@@ -31,7 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class WelcomeActivity extends AppCompatActivity implements
-        FragmentDrawer.FragmentDrawerListener, MoveFragment {
+        FragmentDrawer.FragmentDrawerListener, MoveFragment, MoveFragmentWithOutAddbackStack {
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
     private Activity _activity = this;
@@ -199,6 +200,14 @@ public class WelcomeActivity extends AppCompatActivity implements
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container_body, selectedFragment);
         transaction.addToBackStack(selectedFragment.getClass().getName());
+        transaction.commit();
+
+    }
+    @Override
+    public void moveFragmentWithoutAddbackStack(Fragment selectedFragment) {
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.container_body, selectedFragment);
         transaction.commit();
 
     }

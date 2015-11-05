@@ -71,8 +71,6 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
-
-
             }
         });
     }// end toolBarManage()---------------------
@@ -86,7 +84,18 @@ public class EditProfileActivity extends AppCompatActivity {
         edConfirmPassword = (EditText) findViewById(R.id.edConfirmPassword);
         edNewPassword = (EditText) findViewById(R.id.edNewPassword);
 
+
+        setData();
+
     }// end setBodyUI()---------------------
+
+
+    private void setData() {
+        edFirstName.setText(Utility.getStringExtraBundle("FNAME", mActivty));
+        edLastName.setText(Utility.getStringExtraBundle("LNAME", mActivty));
+        edEmailId.setText(Utility.getStringExtraBundle("EMAIL", mActivty));
+        edContactNo.setText(Utility.getStringExtraBundle("MOBILE", mActivty));
+    }
 
 
     /**

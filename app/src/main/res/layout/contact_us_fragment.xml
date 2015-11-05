@@ -1,29 +1,117 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/label"
+
+    <LinearLayout
+        android:id="@+id/llName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
-        android:gravity="center_horizontal"
-        android:text="Contact Us"
-        android:textSize="45dp"
-        android:textStyle="bold" />
+        android:layout_below="@+id/llHeader"
+        android:orientation="vertical">
 
-    <TextView
+        <EditText
+            android:id="@+id/edName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawablePadding="5dp"
+            android:hint="Name"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:textSize="13dp" />
+
+        <include
+            android:id="@+id/include12"
+            layout="@layout/line_15dp_both"></include>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llEmail"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/label"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="10dp"
-        android:gravity="center_horizontal"
-        android:text="Edit fragment_home.xml to change the appearance"
-        android:textSize="12dp" />
+        android:layout_below="@+id/llSearch"
+        android:orientation="vertical">
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/edEmail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawablePadding="5dp"
+            android:hint="Email Id"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:textSize="13dp" />
+
+        <include
+            android:id="@+id/include12"
+            layout="@layout/line_15dp_both"></include>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llPhone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llSearchCity"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edPhone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawablePadding="5dp"
+            android:hint="Mobile No"
+            android:imeOptions="actionSearch"
+            android:inputType="number"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:textSize="13dp" />
+
+        <include
+            android:id="@+id/include12"
+            layout="@layout/line_15dp_both"></include>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llDes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llSearchCity"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edDes"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="5dp"
+            android:gravity="left"
+            android:hint="Your comments..."
+            android:imeOptions="actionSearch"
+            android:inputType="textMultiLine"
+            android:padding="15dp"
+            android:textSize="13dp" />
+
+        <include
+            android:id="@+id/include12"
+            layout="@layout/line_complete"></include>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

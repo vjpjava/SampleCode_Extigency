@@ -71,6 +71,7 @@ public class ProfileActivity extends AppCompatActivity {
     private ImageOperationUtil imageUtil = null;
     private String mFilePath = null;
     private Bitmap mUserBitmap;
+    private ResponseData data;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -108,7 +109,14 @@ public class ProfileActivity extends AppCompatActivity {
         txtEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utility.doStartActivityWithoutFinish(mActivity, EditProfileActivity.class, "right");
+
+                Bundle bundle = new Bundle();
+                bundle.putString("FNAME", data.getPersonal_detail().getFname().trim());
+                bundle.putString("LNAME", data.getPersonal_detail().getLname().trim());
+                bundle.putString("EMAIL", data.getPersonal_detail().getEmail().trim());
+                bundle.putString("MOBILE", data.getPersonal_detail().getPhone().trim());
+
+                Utility.doStartActivityWithoutFinishBundle(mActivity, EditProfileActivity.class, bundle, "right");
             }
         });
         mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -351,7 +359,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-    }
+    }//end uploadImage()----------------
 
 
     /**
@@ -381,7 +389,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             @Override
             public void success(HealthProviderModel result, Response arg2) {
-                ResponseData data = result.getResponseData();
+                data = result.getResponseData();
 
                 if (result.getStatusCode() == 500) {
                 } else {

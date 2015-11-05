@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.droozo.droozoapp.R;
@@ -52,6 +53,12 @@ public class Utility {
             return false;
 
         return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
+
+
+    //return String value from edittext
+    public static String getStringFromEditText(EditText ed) {
+        return ed.getText().toString().trim();
     }
 
 

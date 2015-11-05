@@ -4,11 +4,13 @@ package com.android.droozo.fragment_slider;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,25 +39,34 @@ public class WelcomeFragment extends Fragment {
     }
 
 
+    @Override
+    public void onResume() {
+
+        super.onResume();
+        Toolbar mToolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
+        mToolbar.setBackgroundColor(getResources().getColor(R.color.green_bg));
+        TextView txtHeader = (TextView) mToolbar
+                .findViewById(R.id.toolbar_title);
+        txtHeader.setText("WELCOME");
+    }
+
+
     @SuppressWarnings("deprecation")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //if (view == null) {
-
-        view = inflater
-                .inflate(R.layout.welcome_fragment, container, false);
-
-        setBodyUI();
-        // } else {
-        //  if (view.getParent() != null) {
-        //     ((ViewGroup) view.getParent()).removeView(view);
-        // }
-        // }
-        // add grid header
-
+        if (view == null) {
+            view = inflater
+                    .inflate(R.layout.welcome_fragment, container, false);
+            setBodyUI();
+        } else {
+            if (view.getParent() != null) {
+                ((ViewGroup) view.getParent()).removeView(view);
+            }
+        }
         return view;
-    }
+    }//end onCreateView()--------------
+
 
     private void setBodyUI() {
         _activity = getActivity();
@@ -112,7 +123,7 @@ public class WelcomeFragment extends Fragment {
         TextView txtFit = (TextView) dialogMapMain.findViewById(R.id.txtGallery);
         txtFit.setText("DOWNLOAD DROOFIT");
 
-//DROOHEALTH
+        //DROOHEALTH
         dialogMapMain.findViewById(R.id.llcamera).setOnClickListener(
                 new View.OnClickListener() {
 
@@ -122,7 +133,7 @@ public class WelcomeFragment extends Fragment {
                         dialogMapMain.dismiss();
                     }
                 });
-//DROOFIT
+        //DROOFIT
         dialogMapMain.findViewById(R.id.llGallery).setOnClickListener(
                 new View.OnClickListener() {
 
@@ -143,4 +154,4 @@ public class WelcomeFragment extends Fragment {
                 });
     }// end popup-----------------------
 
-}
+}//end main class-----------------
