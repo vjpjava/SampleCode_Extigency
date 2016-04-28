@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_bg"
-    tools:context="com.android.droozo.SplashActivity" >
+    android:background="@drawable/bg"
+    tools:context="com.android.droozo.SplashActivity">
 
     <ImageView
         android:id="@+id/splashCenterImgLogo"
@@ -12,13 +12,5 @@
         android:layout_centerInParent="true"
         android:src="@drawable/logo" />
 
-    <TextView
-        style="@style/white_bold_14dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:paddingBottom="10dp"
-        android:layout_centerHorizontal="true"
-        android:text="@string/powered_by_droozo" />
 
 </RelativeLayout>

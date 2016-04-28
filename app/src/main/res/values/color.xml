@@ -6,7 +6,7 @@
     <color name="white">#ffffff</color>
     <color name="light_color">#e5e5e5</color>
     <color name="popup_text_color">#4B4F54</color>
-    <color name="green_bg">#5dc307</color>
+    <color name="green_bg">#E36D48</color>
     <color name="red">#ff0000</color>
     <color name="loginbtn_bg">#b8ca9a</color>
     <color name="FBbg">#3b5999</color>
@@ -20,14 +20,14 @@
     <color name="Detailsdivider">#e3e1e1</color>
 
 
-    <color name="blueBG">#02a6d9</color>
+    <color name="blueBG">#E36D48</color>
     <color name="btntoolbar">#b0ff6e</color>
 
 
 
 
-    <color name="colorPrimary">#5dc307</color>
-    <color name="colorPrimaryDark">#5dc307</color>
+    <color name="colorPrimary">#E36D48</color>
+    <color name="colorPrimaryDark">#E36D48</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#000000</color>

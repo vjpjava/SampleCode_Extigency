@@ -1,0 +1,174 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"></include>
+
+
+    <ScrollView
+
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/nav_header_container"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_below="@+id/toolbar"
+                android:background="@drawable/bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/imgUserDrawer"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/user" />
+
+                <TextView
+                    android:id="@+id/txtNameDetails"
+                    style="@style/grey_popup_normal_14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Dr.V.K. Gupta" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/drawerList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/txtAbout"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:drawableLeft="@drawable/city"
+                        android:drawablePadding="10dp"
+                        android:padding="15dp"
+                        android:text="MBBS" />
+                </RelativeLayout>
+
+
+                <include layout="@layout/line_complete"></include>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtProfileTag"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:drawableLeft="@drawable/city"
+                        android:drawablePadding="10dp"
+                        android:padding="15dp"
+                        android:text="$10000" />
+                </RelativeLayout>
+
+                <include layout="@layout/line_complete"></include>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtService"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:drawableLeft="@drawable/city"
+                        android:drawablePadding="10dp"
+                        android:padding="15dp"
+                        android:text="$10000" />
+                </RelativeLayout>
+
+                <include layout="@layout/line_complete"></include>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtDes"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:drawableLeft="@drawable/city"
+                        android:drawablePadding="10dp"
+                        android:padding="15dp"
+                        android:text="$10000" />
+                </RelativeLayout>
+
+                <include layout="@layout/line_complete"></include>
+
+                <RelativeLayout
+                    android:id="@+id/llMap"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtAddressDetails"
+                        style="@style/grey_normal_14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:drawableLeft="@drawable/location_detail"
+                        android:drawablePadding="10dp"
+                        android:ems="20"
+                        android:padding="15dp"
+                        android:text="256/89, XYZ Coloney, Chicago, USA, 256/89, XYZ Coloney, Chicago, USA" />
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/arrow" />
+
+                </RelativeLayout>
+
+                <include layout="@layout/line_complete"></include>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

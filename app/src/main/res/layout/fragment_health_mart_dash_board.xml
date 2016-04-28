@@ -76,7 +76,7 @@
     </FrameLayout>
 
 
-    <com.android.droozo.util.NoSlideViewPager
+    <com.exigency.exigencycare.util.NoSlideViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"

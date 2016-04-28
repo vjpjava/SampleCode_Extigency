@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
     android:orientation="vertical">
 
     <include
@@ -15,6 +16,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/llHeader"
+
         android:orientation="vertical">
 
         <EditText
@@ -44,18 +46,15 @@
         android:layout_below="@+id/llSearch"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edSearchCity"
+        <TextView
+            android:id="@+id/txtSearchCity"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:drawableLeft="@drawable/city"
             android:drawablePadding="5dp"
             android:hint="@string/search_by_city"
-            android:imeOptions="actionSearch"
-            android:inputType="text"
             android:padding="15dp"
-            android:singleLine="true"
             android:textSize="13dp" />
 
         <include

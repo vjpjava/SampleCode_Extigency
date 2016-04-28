@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/welcome_bg"
+    android:background="@drawable/bg"
     tools:context="org.droozo.activity.SplashActivity">
 
     <TextView
@@ -19,27 +19,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:src="@drawable/logo" />
+        android:src="@drawable/ic_launcher" />
+
 
     <LinearLayout
         android:id="@+id/llButtons"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:padding="25dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        android:paddingBottom="40dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
+        android:orientation="vertical"
         android:weightSum="1">
 
         <LinearLayout
             android:id="@+id/llSignin"
-            android:layout_width="0dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.48"
+            android:layout_weight="0.5"
             android:background="@drawable/selector_btn_for_grey"
             android:gravity="center"
+            android:layout_marginBottom="15dp"
             android:orientation="vertical">
 
             <TextView
@@ -48,22 +48,18 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="@string/log_in"
+                android:text="SIGN IN"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.04"
-            android:background="@android:color/transparent" />
 
         <LinearLayout
             android:id="@+id/llSignup"
-            android:layout_width="0dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.48"
+            android:layout_weight="0.5"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/selector_btn_for_white"
             android:gravity="center"
             android:orientation="vertical">
@@ -74,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="@string/sign_up"
+                android:text="REGISTER"
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
         </LinearLayout>

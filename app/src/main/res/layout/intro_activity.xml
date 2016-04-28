@@ -6,7 +6,7 @@
     android:background="@color/white"
     android:orientation="vertical" >
 
-    <com.android.droozo.util.CustomViewPager
+    <com.exigency.exigencycare.util.CustomViewPager
         android:id="@+id/pager"
         android:background="@android:color/transparent"
         android:layout_width="fill_parent"

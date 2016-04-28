@@ -4,14 +4,14 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/green_bg"
+    android:background="#26123456"
     android:minHeight="?attr/actionBarSize"
     local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
     <TextView
         android:id="@+id/toolbar_title"
-        style="@style/white_text_bold_18dp"
+        style="@style/white_text_normal_16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -19,13 +19,13 @@
 
     <TextView
         android:id="@+id/txtRight"
-        style="@style/toolbar_normal_18dp"
+        style="@style/white_bold_14dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:paddingRight="10dp"
         android:text="@string/done"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
 
 </android.support.v7.widget.Toolbar>

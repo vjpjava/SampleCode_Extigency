@@ -17,14 +17,16 @@
         <ImageView
             android:id="@+id/imgGrid"
             android:layout_width="70dp"
-            android:layout_height="70dp" />
+            android:layout_height="70dp"
+            android:src="@drawable/physician" />
 
         <TextView
             android:id="@+id/txtGrid"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:textColor="@color/black"
+            android:singleLine="true"
+            android:textColor="@color/txtGreyColor"
             android:textSize="10dp" />
     </LinearLayout>
 </LinearLayout>

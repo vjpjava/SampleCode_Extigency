@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/sez1/VishnuResource/AndroidStudioProject/WorkSpaceDroozo/DroozoApp/library/build/intermediates/bundles/debug/res/values/values.xml -->
+    <!-- From: file:/Users/veersena/Documents/android/DrDemo18jan/Exigency/library/build/intermediates/bundles/debug/res/values/values.xml -->
     <eat-comment/>
     <attr format="boolean" name="centered"/>
     <attr format="color" name="selectedColor"/>

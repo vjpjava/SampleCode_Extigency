@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
-    android:orientation="vertical"
-    android:padding="10dp" >
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/llPopup"
@@ -12,7 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/round_corner_ll"
         android:gravity="center_vertical"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/txtFB"
@@ -21,13 +20,13 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:padding="10dp"
-            android:text="@string/please_select_type" />
+            android:text="PLEASE SELECT USER TYPE" />
 
         <LinearLayout
             android:id="@+id/llConsumer"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <View
                 android:layout_width="fill_parent"
@@ -41,14 +40,14 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:padding="10dp"
-                android:text="@string/consumer" />
+                android:text="CONSUMER" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/llServiceProvider"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <View
                 android:layout_width="fill_parent"
@@ -62,31 +61,33 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:padding="10dp"
-                android:text="@string/service_provider" />
+                android:text="SPECIALIST" />
         </LinearLayout>
-    </LinearLayout>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="5dp"
-        android:background="@android:color/transparent" />
-
-    <LinearLayout
-        android:id="@+id/llCancel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round_corner_ll"
-        android:gravity="center_vertical"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/txtCancel"
-            style="@style/grey_popup_normal_14dp"
+        <View
             android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/light_color" />
+
+        <LinearLayout
+            android:id="@+id/llCancel"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:padding="10dp"
-            android:text="@string/cancel" />
+            android:background="@drawable/round_corner_ll"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtCancel"
+                style="@style/grey_popup_normal_15dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="@string/cancel" />
+        </LinearLayout>
+
     </LinearLayout>
+
 
 </LinearLayout>
